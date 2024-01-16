@@ -1,0 +1,162 @@
+:root {
+  --primary-purple: hsl(259, 100%, 65%);
+  --primary-light-red: hsl(0, 100%, 67%);
+
+  --white: hsl(0, 0%, 100%);
+  --off-white: hsl(0, 0%, 94%);
+  --light-grey: hsl(0, 0%, 86%);
+  --smokey-grey: hsl(0, 1%, 44%);
+  --off-black: hsl(0, 0%, 8%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+  margin: 10px 5px;
+  padding: 0;
+  background-color: var(--off-white);
+}
+
+h1 {
+  font-size: 52px;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.container {
+  background-color: var(--white);
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px 10px 50px 10px;
+}
+
+.date-input {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 12px;
+  padding: 30px 0 5px 0;
+  color: var(--smokey-grey);
+}
+
+.input input {
+  border: 1px solid var(--light-grey);
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 7px;
+}
+
+.input p {
+  color: transparent;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.input input:focus {
+  outline-color: var(--primary-purple);
+}
+
+.invalid-date .input label {
+  color: var(--primary-light-red);
+}
+
+.invalid-date .input input {
+  border-color: var(--primary-light-red);
+}
+
+.invalid-date .input p {
+  color: var(--primary-light-red);
+}
+
+.result-image {
+  display: flex;
+  justify-content: center;
+}
+
+.result-design {
+  padding: 55px 0;
+}
+
+.strip {
+  background-color: var(--light-grey);
+  width: auto;
+  height: 0.5px;
+  z-index: 2;
+}
+
+.result-image {
+  position: relative; 
+  z-index: 1;
+}
+
+.result-image img {
+  background-color: var(--primary-purple);
+  padding: 13px;
+  width: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.result-image img:hover {
+  background-color: var(--off-black);
+}
+
+.age-result {
+  display: flex;
+  flex-direction: column;
+  line-height: 0px;
+  padding-bottom: 20px;
+}
+
+.result {
+  display: flex;
+  gap: 5px;
+}
+
+.result-num {
+  color: var(--primary-purple);
+}
+
+@media only screen and (min-width: 600px) {
+
+  .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 30px;
+  }
+
+  .strip {
+      border: 0px solid var(--light-grey);
+      width: 100%;
+      z-index: 0;
+  }
+
+  .result-image {
+      position: relative; 
+      z-index: 1;
+  }
+
+  .result-design {
+      display: flex;
+      padding-right: 15px;
+  }
+
+}
